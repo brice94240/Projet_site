@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@300&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+body#accueil{
+  background-image: url(./ressources/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.header_body{
+  background: url(./ressources/devis.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 25em;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+}
+
+.header_body_filter{
+  background: black;
+  opacity: 0.4;
+  height: 25em;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+}
+
+.content_header_body {
+  height: 4em;
+  margin-top: 4em;
+  width: 100%;
+  color: white;
+  font-weight: bolder;
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  top: 1em; 
+}
+
+.content >a {
+  color: white;
+  text-decoration: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+.devis{
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.5em;
+}
+.content >a:hover {
+  color: black;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+#logo>a>img{
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border: 0;
+  width: 50%;
+}
+.block_navbar{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  width: 100%;
+}
+#logo{
+  padding:2em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+}
+header#navbar > *{
+  font-size: 15px;
+}
+header{
+  width: 75%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header > a,
+.dropdown-1 > button{
+  color: white;
+  margin: 0 10px;
+  font-size: 10px;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+header .dropdown-1{
+  position: relative;
+  height: 100%;
+  display: flex;
+}
+
+.dropdown-1 > button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 15px;
+}
+header .dropdown-1 .content{
+  display: none;
+}
+
+header .dropdown-1:hover .content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(167, 167, 167);
+  top:70px;
+  width: 120%;
+  padding: 8px 15px;
+  box-sizing: border-box;
+}
+
+header .icon{
+  display: none;
+}
+.icon{
+  cursor: pointer;
+}
+@media (max-width : 600px){
+  header > a,
+  .dropdown-1 > button{
+    display: none;
+  }
+  header .icon{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 5% !important;
+    text-align: center;
+    top: 20px;
+    padding: 0 !important;
+  }
+  header.responsive > a,
+  header.responsive .dropdown-1{
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+  }
+  header.responsive button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+  }
+  header.responsive > a{
+    padding: 10px 0;
+    text-align: center;
+  }
+  header.responsive{
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    min-height: 70px;
+    width: 15em;
+    position: fixed;
+    padding-top: 2em;
+    background: #1a1a1a;
+  }
+  header .dropdown-1:hover .content{
+    position: relative;
+    width: 100%;
+    top: 0;
+    text-align: center;
+  }
+  header.responsive .icon{
+    left: 17em;
+  }
+  header.responsive #logo{
+    display: none;
+  }
+  .devis{
+    border:unset;
+  }
+}
+.explain-devis{
+  width: 50em;
+  color: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  background: #f7f8f9;
+  margin-top: 1em;
+}
+.tite-explain-devis {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Lobster', cursive;
+}
+.tite-accroche-devis{
+  font-size: 12px;
+  font-family: 'Lobster', cursive;
+}
+.content-explain-devis>p {
+  margin-bottom: unset;
+  font-size: 12px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%;
+  font-family: 'Lobster', cursive;
+}
+textarea.text_area_devis {
+  width: 100%;
+}
+.error {
+  color: red;
+  margin-bottom: 1em;
+}
+.infos-devis {
+  background: #de9206;
+  width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  height: 2em;
+  text-align: center;
+}
+.content-explain-devis {
+  padding-bottom: 1em;
+}
+form.form_devis>p {
+  display: grid;
+  margin: unset;
+}
+form.form_devis {
+  width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f7f8f9;
+}
+.form_devis>* {
+  font-weight: bolder;
+}
