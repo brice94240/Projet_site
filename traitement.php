@@ -42,7 +42,7 @@ elseif($pro == "" && $part == "")
 }
 elseif(intval($nbr_conv)<=0)
 {
-        echo "Failed_Devis_NbrConv"; 
+    echo "Failed_Devis_NbrConv"; 
 }
 else if(strlen($infos_complementaires)<20)
 {
@@ -68,7 +68,7 @@ else
     }
     else
     {
-        $value_who = "pat";
+        $value_who = "part";
     }
 
     $adduser = $conn->prepare("INSERT INTO devis(date_event,hours_begin,hours_end,nbr_conv,lieu,comment,cible,created,ip) VALUES (:date_event,:hours_begin,:hours_end,:nbr_conv,:lieu,:comment,:cible,NOW(),:ip)");

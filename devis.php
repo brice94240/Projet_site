@@ -28,12 +28,12 @@
   <div class="infos-devis">
     Merci de remplir le formulaire !
   </div>
-  <form class="form_devis" method="post" action="traitement.php" name="devis" id="form_devis">
+  <form class="form_devis" method="post" name="devis" id="form_devis">
    <p>
        <label for="date">Date :</label>
        <input type="date" name="date" id="date" />
        Heure de debut :
-       <select name="heure_begin_select" id="heure_select">
+       <select name="heure_begin_select" id="heure_begin_select">
          <?php
          for($count=0; $count<24;$count++)
          {
@@ -49,7 +49,7 @@
          ?>
     </select>
     Heure de fin :
-    <select name="heure_end_select" id="heure_select">
+    <select name="heure_end_select" id="heure_end_select">
          <?php
          for($count=0; $count<24;$count++)
          {
@@ -76,7 +76,7 @@
         <input type="checkbox" id="no_loc" name="no_loc">
         <label for="no_loc">Vous n'avez pas de lieu</label>
       </label>
-      <br><textarea name="infos_complementaires" cols="40" rows="10" class="text_area_devis" aria-invalid="false" placeholder="Dites-nous en plus sur votre event"></textarea>
+      <br><textarea id="infos_complementaires" name="infos_complementaires" cols="40" rows="10" class="text_area_devis" aria-invalid="false" placeholder="Dites-nous en plus sur votre event"></textarea>
       <label class="container" id="pro_or_part">
       <label for="pro_or_part">Vous êtes :</label>
       <input type="checkbox" id="pro" name="pro" checked="true">
@@ -85,10 +85,11 @@
       <input type="checkbox" id="part" name="part">
         <label for="part">Particulier</label>
       </label>
-      <input type="submit" value="Envoyer" class="devis_submit">
+      <input type="submit" value="Envoyer" class="devis_submit" id="devis_submit">
    </p>
 </form>
 </div>
+<div class="resultat" id="resultat"></div>
 </body>
 <footer>
 </footer>

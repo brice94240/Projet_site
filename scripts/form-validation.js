@@ -43,3 +43,81 @@ $(document).ready(function(){
     $("#pro_or_part :input:checkbox").not(this).prop('checked', false);
   });
 });
+
+$("#devis_submit").click(function(e){
+  e.preventDefault();
+
+  $.post(
+      'traitement.php',
+      {
+          date : $("#date").val(),
+          heure_begin_select : $("#heure_begin_select").val(),
+          heure_end_select : $("#heure_end_select").val(),
+          nbr_conv : $("#nbr_conv").val(),
+          my_loc : $("#my_loc").val(),
+          your_loc : $("#your_loc").val(),
+          no_loc : $("#no_loc").val(),
+          part : $("#part").val(),
+          infos_complementaires : $("#infos_complementaires").val()
+      },
+
+      function(data_devis){
+
+          if(data_devis == 'Success_Devis')
+          {
+            $("#resultat").css("background-color", "#15aa15");
+            $("#resultat").html("<p>Vous avez été inscrit avec succès !</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Devis_Date')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Le nom de compte est déja utilisé !</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Heure_Begin')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Confirmation du mot de passe inccorect !</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Heure_End')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Le mot de passe doit faire entre 6 et 13 caracteres !</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Lieu')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Le nom de compte doit faire entre 6 et 13 caracteres !</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Who')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Votre e-mail semble invalide !</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Devis_NbrConv')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Votre couleur semble invalide ! (red ou blue)</p>");
+            setTimeout(disappear, 3000);
+          }
+          else if(data_devis == 'Failed_Devis_Compl')
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Votre couleur semble invalide ! (red ou blue)</p>");
+            setTimeout(disappear, 3000);
+          }
+          else
+          {
+            $("#resultat").css("background-color", "#d9534f");
+            $("#resultat").html("<p>Erreur, veuillez contacter l'Equipe !</p>");
+            setTimeout(disappear, 3000);
+          }
+   
+      },
+   );
+});
