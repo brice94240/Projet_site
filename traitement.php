@@ -4,13 +4,13 @@ $date = addslashes($_POST['date']);
 $hours_begin_select = addslashes($_POST['heure_begin_select']);
 $hours_end_select = addslashes($_POST['heure_end_select']);
 
-$my_loc = (empty($_POST['my_loc'])) ? '' : addslashes($_POST['my_loc']);
-$your_loc = (empty($_POST['your_loc'])) ? '' : addslashes($_POST['your_loc']);
-$no_loc = (empty($_POST['no_loc'])) ? '' : addslashes($_POST['no_loc']);
+$my_loc =  addslashes($_POST['my_loc']);
+$your_loc = addslashes($_POST['your_loc']);
+$no_loc = addslashes($_POST['no_loc']);
 $value_lieu="";
 
-$pro = (empty($_POST['pro'])) ? '' : addslashes($_POST['pro']);
-$part = (empty($_POST['part'])) ? '' : addslashes($_POST['part']);
+$pro = addslashes($_POST['pro']);
+$part = addslashes($_POST['part']);
 $value_who="";
 
 $nbr_conv = addslashes($_POST['nbr_conv']);
@@ -31,12 +31,12 @@ elseif($hours_end_select == "")
     echo "Failed_Heure_End"; 
 }
 
-elseif($my_loc == "" && $your_loc == "" && $no_loc == "")
+elseif($my_loc == "no" && $your_loc == "no" && $no_loc == "no")
 {
-    echo "Failed_Lieu"; 
+    echo "Failed_Lieu";
 }
 
-elseif($pro == "" && $part == "")
+elseif($pro == "no" && $part == "no")
 {
     echo "Failed_Who";   
 }
@@ -50,23 +50,24 @@ else if(strlen($infos_complementaires)<20)
 }
 else
 {   
-    if($my_loc !== "")
+    if($my_loc !== "no")
     {
         $value_lieu = "my_loc";
     }
-    elseif($your_loc !== "")
+    elseif($your_loc !== "no")
     {
         $value_lieu = "your_loc";
     }
-    else
+    elseif($no_loc !== "no")
     {
         $value_lieu = "no_loc";
     }
-    if($pro !== "")
+
+    if($pro !== "no")
     {
         $value_who = "pro";
     }
-    else
+    elseif($part !== "no")
     {
         $value_who = "part";
     }
